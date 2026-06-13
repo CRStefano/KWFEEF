@@ -1,0 +1,46 @@
+==============================================================================
+A) SWEEP FORAGING S-FEEF (modello 2-D). baseline: tau5 fdr0.1 er1 de100 fe10
+==============================================================================
+  BASELINE: I0=2.322 SST=1.522 I*=0.971 a_c=27.50 dips=2 over_pen=0.50 misleading_gap=28.4 subthreshold=True
+
+  -- eat_radius (affordance corporea) --
+   er=0: SST=2.322 I*=-0.000 a_c=4.74 dips=2 over_pen=0.00 misleading_gap=3.9
+   er=1: SST=1.522 I*=0.971 a_c=27.50 dips=2 over_pen=0.50 misleading_gap=28.4
+   er=2: SST=-0.000 I*=-0.000 a_c=inf dips=3 over_pen=4.42 misleading_gap=4.8
+  -- food_disappear_rate (volatilita') --
+   fdr=0.0: SST=1.522 I*=0.971 a_c=27.82 dips=3 over_pen=0.74 gap=28.5
+   fdr=0.1: SST=1.522 I*=0.971 a_c=27.50 dips=2 over_pen=0.50 gap=28.4
+   fdr=0.3: SST=1.522 I*=0.971 a_c=25.54 dips=2 over_pen=0.13 gap=27.0
+   fdr=0.5: SST=1.522 I*=0.971 a_c=23.12 dips=2 over_pen=0.00 gap=25.0
+  -- dead_entropy lambda (penalita' morte) --
+   lambda=50: SST=1.522 I*=0.971 a_c=13.77 kwsi=13.55
+   lambda=100: SST=1.522 I*=0.971 a_c=27.50 kwsi=27.94
+   lambda=500: SST=1.522 I*=1.522 a_c=137.33 kwsi=143.08
+  -- agentlevel_fe (riserva fisiologica) --
+   fe=5: SST=1.522 I*=0.971 a_c=41.92
+   fe=10: SST=1.522 I*=0.971 a_c=27.50
+   fe=20: SST=1.522 I*=0.971 a_c=15.66
+  -- mode --
+   pos: I0=2.322 SST=1.522 I*=0.971 a_c=27.50 kwsi=27.94
+   neg: I0=2.322 SST=-0.000 I*=-0.000 a_c=inf kwsi=-5.40
+   neutral: I0=0.000 SST=0.000 I*=0.000 a_c=inf kwsi=0.00
+  -- tau (orizzonte) --
+   tau=3: SST=1.522 I*=0.971 a_c=18.87 dips=3
+   tau=5: SST=1.522 I*=0.971 a_c=27.50 dips=2
+   tau=7: SST=1.522 I*=0.971 a_c=33.21 dips=3
+   tau=10: SST=1.522 I*=0.971 a_c=37.62 dips=3
+
+==============================================================================
+B) LIFE-HISTORY: universalita' di gamma_c = P0
+==============================================================================
+   P0=0.30 -> gamma_c=0.300 (atteso 0.300); match=True
+   P0=0.50 -> gamma_c=0.500 (atteso 0.500); match=True
+   P0=0.70 -> gamma_c=0.700 (atteso 0.700); match=True
+   P0=0.90 -> gamma_c=0.900 (atteso 0.900); match=True
+
+==============================================================================
+C) BET-HEDGING: soglia sigma* (passaggio a iteroparita') vs P0
+==============================================================================
+   P0=0.92: sigma a cui u* scende sotto 0.5 ~ 0.25
+   P0=0.80: sigma a cui u* scende sotto 0.5 ~ 0.65
+   P0=0.70: sigma a cui u* scende sotto 0.5 ~ 0.9
