@@ -88,10 +88,6 @@ Pre-generated outputs are in `Programma/risultati/` for reference.
 ```
 .
 ├── README.md                        # this file
-├── GOBBO_spiegazione_semplice.md    # plain-language explainer (Italian, no math)
-├── Paper/
-│   ├── The mind as an information filter.tex
-│   └── The mind as an information filter.pdf
 └── Programma/
     ├── Avvia_programma.bat          # one-click launcher
     ├── main.py                      # interactive dashboard
