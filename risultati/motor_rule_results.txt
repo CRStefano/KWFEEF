@@ -1,0 +1,24 @@
+TEST DI ROBUSTEZZA: la non-monotonicita' (e la compressione sotto-soglia)
+dipendono dalla regola motoria? Stesso spazio stati, stessa viability, stessa MI.
+Solo l'azione data la CLASSE percepita cambia. (eat_radius=1, tau=5, alpha=9.5)
+
+regola        stile                         dips  over_pen  SST    I*    I*<SST  non-monot.
+------------  ----------------------------  ----  --------  -----  ----  ------  ----------
+centroid      euristica media (attuale)      2     0.50     1.52   0.97   si      SI
+bayes-1step   miope ottimo (max P(mangia))   3     0.65     1.52   0.97   si      SI
+nearest       impegnato sul piu' vicino      1     0.00     2.32   2.32   NO      no (peak a info piena)
+random        copertura/hedge sui membri     0     0.00     2.32   1.52   si      no
+
+LETTURA:
+- La non-monotonicita' NON e' solo l'artefatto del centroide geometrico
+  (i revisori dicevano "il centroide cade nel mezzo vuoto"): sopravvive, anzi
+  cresce, sotto la regola miope Bayes-ottima. Quindi la loro spiegazione e' incompleta, per me
+ questo è un ottimo risultato.
+- MA i due risultati di punta (non-monotonicita' E compressione sotto-soglia)
+  cambiano radicalmente con la regola motoria. Sotto 'nearest' (impegno sul membro
+  reale piu' vicino) la viability e' monotona e l'agente vuole TUTTA l'informazione
+  (niente frugalita' a alpha=9.5).
+- Radice comune: entrambi i fenomeni nascono quando l'azione puo' essere "ingannata"
+  dalla percezione grossolana (media del centroide, o ottimizzazione miope). Quando
+  l'agente impegna l'azione su un'ipotesi reale, o copre il rischio randomizzando,
+  i fenomeni si attenuano o spariscono. Si potrebbe ampliare questa cosa...
