@@ -1,18 +1,13 @@
 # The Mind as an Information Filter
 
-*A thermodynamic account of why adaptive systems choose to know less.*
-
-> Ignorance, in a system that must pay to think, is not a failure. It can be the optimum.
-
----
-
 ## The idea
 
-Start from a fact everyone half-knows but rarely takes seriously: **information costs energy.** A brain is metabolically expensive. Every bit a nervous system acquires, holds, and refreshes is paid for in ATP — and that energy could have gone to staying alive instead.
+It all started with a research project I undertook between my first and second years of studying philosophy at the University of Turin. I had become fascinated by the philosophy of mind and had started reading a lot about it.
+Now, years later, I wanted to take it seriously. So I’d say let’s start from a fact everyone half-knows but rarely takes seriously: **information costs energy.** A brain is metabolically expensive. Every bit a nervous system acquires, holds, and refreshes is paid for in ATP — and that energy could have gone to staying alive instead.
 
 So here is the question this project is about. If knowing the world costs energy, and that energy is subtracted from survival, **how much of the world should a living thing actually bother to represent?**
 
-The answer is *not* "as much as possible." That is what information theory would tell you if information were free. It isn't. The right answer is a trade-off, and this repo works it out — formally, then in code, then in plain language.
+Contrary to what you might think (and many people do think this), the answer is *not* "as much as possible." That is what information theory would tell you if information were free. It isn't. Period. The right answer is a trade-off, and this repo works it out, formally, then in code, then in plain language.
 
 The punchline, which I did not expect when I started: the optimal agent deliberately **throws information away**, sitting *below* the point where it would have everything it needs. Ignorance turns out to be a thermodynamic achievement, not a cognitive deficit.
 
@@ -22,9 +17,8 @@ The punchline, which I did not expect when I started: the optimal agent delibera
 
 Three things, for three kinds of reader:
 
-- **`Paper/`** — the full paper (33 pages, LaTeX + PDF). The rigorous version: definitions, theorems, the model, the results, a formal derivation, and an honest limitations section.
-- **`Programma/`** — the model itself: a small foraging agent, the exhaustive optimiser, and an interactive dashboard you can open in a browser. Everything is reproducible from the scripts.
-- **`GOBBO_spiegazione_semplice.md`** — a plain-language explainer **in Italian**, with everyday examples and zero mathematics. If you don't want the equations, start there.
+- **`Paper/`** — the full paper (33 pages, LaTeX + PDF). I'll upload it shortly. I'll also post a link so you can read it on PhilPapers (that way you'll give me a couple of views—I know, I'm a bit of a sellout.)
+- **`Programma/`** — the model itself: a small foraging agent, the exhaustive optimiser, and an interactive dashboard you can open in a browser. Everything is reproducible from the scripts. I like things to be simple and intuitive, so you can launch the entire program simply by opening a .bat file (called “avvia_programma.bat”) - Everything is very neat; I hope you like it. **(Give me a star, give me a star, give me a star)** -
 
 ---
 
@@ -38,7 +32,7 @@ A creature forages on a 3×3 grid. It cannot perceive the world in full detail f
 
 Four results, stated honestly.
 
-**1. Less is more.** The optimal agent keeps ~42% of the available information and still secures ~93% of the achievable viability. Past a certain resolution — the *Semantic Saturation Threshold* — more detail simply doesn't pay.
+**1. Less is more.** The optimal agent keeps ~42% of the available information and still secures ~93% of the achievable viability. Past a certain resolution — the *Semantic Saturation Threshold*, more detail simply doesn't pay.
 
 **2. More information can hurt — but only for a bounded agent.** Some coarse-grainings are *actively misleading*: merge two opposite places into one category, head for the average, and you walk into the empty middle. So viability is *non-monotone* in information. I want to be precise about this, because it's the most easily over-sold result: it survives a myopically Bayes-optimal action rule (so it is **not** a trivial artefact of going to the centroid), but it **disappears** if the agent commits to a concrete hypothesis or hedges. The honest reading is that "more can hurt" is a property of *bounded perception–action coupling* — the regime real organisms live in — not a universal theorem about information.
 
@@ -52,26 +46,19 @@ The same marginal-return logic then extends, in the paper, to evolutionary life-
 
 ## The move I'm proudest of
 
-Early versions postulated viability with a hand-tuned penalty parameter. The fix that made everything click is to **define viability as the non-equilibrium free energy** of the agent's distribution — its Kullback–Leibler distance from the Boltzmann (death) equilibrium. This is not cosmetic:
+Early versions postulated viability with a hand-tuned penalty parameter. The fix that made everything click is to **define viability as the non-equilibrium free energy** of the agent's distributio, its Kullback–Leibler distance from the Boltzmann (death) equilibrium. This is not cosmetic:
 
-- the free parameter disappears — the "cost of death" is now just the free-energy gap, already fixed by the substrate;
+- the free parameter disappears, the "cost of death" is now just the free-energy gap, already fixed by the substrate;
 - viability and information end up in the *same unit*, so the metabolic multiplier α becomes a genuine exchange rate with a **Landauer floor** (α ≥ 1);
 - and it lets me **derive** the S-FEEF criterion from Millidge's *Free Energy of the Future* under four explicitly stated approximations (Appendix B), turning a suggestive analogy with Friston's Free Energy Principle into a reduction.
 
-It also commits the framework to a stance I'm happy to defend: **information is physical** — carried by matter, costed in energy, valued in energy. (Landauer; Rovelli; Adlam & Rovelli; Bartlett et al.)
+It also commits the framework to a stance I'm happy to defend: **information is physical** (Some people might be shocked, while others will say, “That was obvious,” but I don't think it's a given. I discuss this in more detail in the paper (please read the paper, thank you))
 
 ---
 
-## What this is *not*
+Is everything perfect? I wish. I know full well that  It's a **toy model** — 108 states. It demonstrates mechanisms; it does not prove universal laws at scale. Several headline results are **contingent on the action rule**, as said above. I treat that as a finding, not as something to hide. here is **no empirical validation yet** (the key word here is “yet”). The paper proposes a concrete paradigm (titrate metabolic load, measure perceptual grain); nobody has run it. The link to the Free Energy Principle is a derivation **under stated approximations**, not yet ((again: the key word is “yet”)) a parameter-free identity.
 
-I'd rather you hear the limitations from me than from a referee.
-
-- It's a **toy model** — 108 states. It demonstrates mechanisms; it does not prove universal laws at scale.
-- Several headline results are **contingent on the action rule**, as said above. I treat that as a finding, not as something to hide.
-- There is **no empirical validation yet**. The paper proposes a concrete paradigm (titrate metabolic load, measure perceptual grain); nobody has run it.
-- The link to the Free Energy Principle is a derivation **under stated approximations**, not yet a parameter-free identity.
-
-If those bother you, good — they bother me too, and they are the to-do list.
+If those bother you, good — they bother me too, and they are the to-do list....If you'd like to give me a hand...
 
 ---
 
@@ -79,7 +66,7 @@ If those bother you, good — they bother me too, and they are the to-do list.
 
 You need **Python 3.11+**.
 
-**The easy way (interactive dashboard):** open `Programma/` and double-click `Avvia_programma.bat`. It installs its own dependencies, starts a local server, and opens your browser at `http://localhost:5000`. Drag the sliders (metabolic cost α, horizon τ, reach, …) and watch the optimum move.
+**The easy way (interactive dashboard):** open `Programma/` and double-click `Avvia_programma.bat`. It installs its own dependencies, starts a local server, and opens your browser at `http://localhost:5000`. Drag the sliders (metabolic cost α, horizon τ, reach, …) and watch the optimum move. (I know, some things are still written in Italian. Unfortunately, I still can't think in English. Most of it, though, has been translated, and I solemnly promise that I'll translate everything.)
 
 **Reproducing the paper's numbers** (from inside `Programma/`):
 
@@ -123,23 +110,15 @@ Pre-generated outputs are in `Programma/risultati/` for reference.
 
 ## Standing on
 
-This work is a synthesis, and it owes its bones to others: Kolchinsky & Wolpert on semantic information and the thermodynamics of agency; Friston's Free Energy Principle and Millidge, Tschantz & Buckley on the Free Energy of the Future; Landauer on the physicality of information; Rovelli on meaning as information plus evolution; and the long tradition of bounded and ecological rationality (Simon, Gigerenzer, Wheeler). Full references are in the paper.
+This work is a synthesis, and it owes its bones to others: Kolchinsky & Wolpert on semantic information and the thermodynamics of agency; Friston's Free Energy Principle and Millidge, Tschantz & Buckley on the Free Energy of the Future; Landauer on the physicality of information; Rovelli on meaning as information plus evolution; and the long tradition of bounded and ecological rationality (Simon, Gigerenzer, Wheeler). Full references are in the paper (I know, sorry, I have a soft spot for Kolchinsky; I mention it in every project I work on.).
 
 ---
 
-## Status
-
-Research preview / working paper. Single author. Feedback, criticism, and collaboration are very welcome — the honest limitations above are exactly where help would matter most.
-
-## Citing
-
-> Coelati Rama, S. *The Mind as an Information Filter: A Thermodynamically Grounded Framework for Sub-Threshold Information Selection in Adaptive Systems.* Working paper, 2026.
 
 ## Contact
 
-Stefano Coelati Rama — *[add your preferred email / GitHub handle / ORCID]*
+[Stefano Coelati Rama](https://stefanocoelatirama.com)
 
-With thanks to Mauro Lenti (Università degli Studi di Torino) for the criticism that reshaped the foundations.
 
 ## License
 
@@ -147,3 +126,6 @@ With thanks to Mauro Lenti (Università degli Studi di Torino) for the criticism
 - Paper and text (`Paper/`, this README, the explainer): **CC BY 4.0** — see [`Paper/LICENSE`](Paper/LICENSE).
 
 In short: use, modify, and build on the code freely; reuse the writing freely too, just give credit.
+
+
+~ be so good that they can't ignore you.
