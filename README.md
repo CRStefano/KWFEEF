@@ -3,7 +3,7 @@
 ## The idea
 
 It all started with a research project I undertook between my first and second years of studying philosophy at the University of Turin. I had become fascinated by the philosophy of mind and had started reading a lot about it.
-Now, years later, I wanted to take it seriously. So I’d say let’s start from a fact everyone half-knows but rarely takes seriously: **information costs energy.** A brain is metabolically expensive. Every bit a nervous system acquires, holds, and refreshes is paid for in ATP — and that energy could have gone to staying alive instead.
+Now, years later, I wanted to take it seriously. So I’d say let’s start from a fact everyone half-knows but rarely takes seriously: **information costs energy.** A brain is metabolically expensive. Every bit a nervous system acquires, holds, and refreshes is paid for in ATP, and that energy could have gone to staying alive instead.
 
 So here is the question this project is about. If knowing the world costs energy, and that energy is subtracted from survival, **how much of the world should a living thing actually bother to represent?**
 
@@ -17,14 +17,14 @@ The punchline, which I did not expect when I started: the optimal agent delibera
 
 Three things, for three kinds of reader:
 
-- **`Paper/`** — the full paper (33 pages, LaTeX + PDF). I'll upload it shortly. I'll also post a link so you can read it on PhilPapers (that way you'll give me a couple of views—I know, I'm a bit of a sellout.)
+- **`Paper/`** — the full paper (40 pages, LaTeX + PDF). I'll upload it shortly. I'll also post a link so you can read it on PhilPapers (that way you'll give me a couple of views—I know, I'm a bit of a sellout.)
 - **`Programma/`** — the model itself: a small foraging agent, the exhaustive optimiser, and an interactive dashboard you can open in a browser. Everything is reproducible from the scripts. I like things to be simple and intuitive, so you can launch the entire program simply by opening a .bat file (called “avvia_programma.bat”) - Everything is very neat; I hope you like it. **(Give me a star, give me a star, give me a star)** -
 
 ---
 
 ## The model in one breath
 
-A creature forages on a 3×3 grid. It cannot perceive the world in full detail for free; instead it picks a **perceptual policy** — a way of grouping the world into coarse categories (e.g. "food on the left" instead of "food in cell (0,2)"). There are exactly 203 such policies, and the program tries all of them. For each, it measures two quantities in the *same physical unit* (bits of free energy): how much **information** the policy keeps, and how much **viability** (distance from the death-equilibrium) it buys. The S-FEEF rule then picks the policy that maximises viability *net of the metabolic cost of information.*
+A creature forages on a 3×3 grid. It cannot perceive the world in full detail for free; instead it picks a **perceptual policy**,  a way of grouping the world into coarse categories (e.g. "food on the left" instead of "food in cell (0,2)"). There are exactly 203 such policies, and the program tries all of them. For each, it measures two quantities in the *same physical unit* (bits of free energy): how much **information** the policy keeps, and how much **viability** (distance from the death-equilibrium) it buys. The S-FEEF rule then picks the policy that maximises viability *net of the metabolic cost of information.*
 
 ---
 
@@ -32,13 +32,13 @@ A creature forages on a 3×3 grid. It cannot perceive the world in full detail f
 
 Four results, stated honestly.
 
-**1. Less is more.** The optimal agent keeps ~42% of the available information and still secures ~93% of the achievable viability. Past a certain resolution — the *Semantic Saturation Threshold*, more detail simply doesn't pay.
+**1. Less is more.** The optimal agent keeps ~42% of the available information and still secures ~93% of the achievable viability. Past a certain resolution, the *Semantic Saturation Threshold*, more detail simply doesn't pay.
 
-**2. More information can hurt — but only for a bounded agent.** Some coarse-grainings are *actively misleading*: merge two opposite places into one category, head for the average, and you walk into the empty middle. So viability is *non-monotone* in information. I want to be precise about this, because it's the most easily over-sold result: it survives a myopically Bayes-optimal action rule (so it is **not** a trivial artefact of going to the centroid), but it **disappears** if the agent commits to a concrete hypothesis or hedges. The honest reading is that "more can hurt" is a property of *bounded perception–action coupling* — the regime real organisms live in — not a universal theorem about information.
+**2. More information can hurt, but only for a bounded agent.** Some coarse-grainings are *actively misleading*: merge two opposite places into one category, head for the average, and you walk into the empty middle. So viability is *non-monotone* in information. I want to be precise about this, because it's the most easily over-sold result: it survives a myopically Bayes-optimal action rule (so it is **not** a trivial artefact of going to the centroid), but it **disappears** if the agent commits to a concrete hypothesis or hedges. The honest reading is that "more can hurt" is a property of *bounded perception–action coupling* — the regime real organisms live in — not a universal theorem about information.
 
 **3. The dark room is a sharp threshold, not a paradox.** Raise the per-bit cost α and the optimum jumps discontinuously from "engage with the world" to "process nothing" (the dark room) at a computable critical value. No extra drives or preferences required — and because viability and information now share units, that threshold sits a fixed multiple above Landauer's physical floor.
 
-**4. The body gates the value of the mind.** Vary only the agent's reach and three regimes appear: too weak to use information (it gives up), an intermediate band where information is precious and selective, and *so capable that information becomes harmful* — a creature whose body solves the problem has no use for a mind that represents it. Rational inattention is bounded by morphology, non-monotonically.
+**4. The body gates the value of the mind.** Vary only the agent's reach and three regimes appear: too weak to use information (it gives up), an intermediate band where information is precious and selective, and *so capable that information becomes harmful*, a creature whose body solves the problem has no use for a mind that represents it. Rational inattention is bounded by morphology, non-monotonically.
 
 The same marginal-return logic then extends, in the paper, to evolutionary life-history: semelparity (the salmon that breeds once and dies), the *emergence* of senescence as an optimum, and bet-hedging under environmental noise.
 
@@ -56,9 +56,9 @@ It also commits the framework to a stance I'm happy to defend: **information is 
 
 ---
 
-Is everything perfect? I wish. I know full well that  It's a **toy model** — 108 states. It demonstrates mechanisms; it does not prove universal laws at scale. Several headline results are **contingent on the action rule**, as said above. I treat that as a finding, not as something to hide. here is **no empirical validation yet** (the key word here is “yet”). The paper proposes a concrete paradigm (titrate metabolic load, measure perceptual grain); nobody has run it. The link to the Free Energy Principle is a derivation **under stated approximations**, not yet ((again: the key word is “yet”)) a parameter-free identity.
+Is everything perfect? I wish. I know full well that  It's a **toy model**, 108 states. It demonstrates mechanisms; it does not prove universal laws at scale. Several headline results are **contingent on the action rule**, as said above. I treat that as a finding, not as something to hide. here is **no empirical validation yet** (the key word here is “yet”). The paper proposes a concrete paradigm (titrate metabolic load, measure perceptual grain); nobody has run it. The link to the Free Energy Principle is a derivation **under stated approximations**, not yet ((again: the key word is “yet”)) a parameter-free identity.
 
-If those bother you, good — they bother me too, and they are the to-do list....If you'd like to give me a hand...
+If those bother you, good, they bother me too, and they are the to-do list....If you'd like to give me a hand...
 
 ---
 
