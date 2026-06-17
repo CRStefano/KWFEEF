@@ -2,6 +2,8 @@
 
 ## The idea
 
+>To read the paper on this model, follow this link: “https://philpapers.org/rec/COETMA-5”
+
 It all started with a research project I undertook between my first and second years of studying philosophy at the University of Turin. I had become fascinated by the philosophy of mind and had started reading a lot about it.
 Now, years later, I wanted to take it seriously. So I’d say let’s start from a fact everyone half-knows but rarely takes seriously: **information costs energy.** A brain is metabolically expensive. Every bit a nervous system acquires, holds, and refreshes is paid for in ATP, and that energy could have gone to staying alive instead.
 
