@@ -1,0 +1,18 @@
+=== LIFE-HISTORY ALLOCATION (Eq. 11) ===
+Phi(u) = u^gamma / (1 - P0 (1-u)^k),  P0 = 1 - p_dead(pi*),  k=1
+gamma_c = P0 (iteroparity -> semelparity transition)
+
+Foraging mortality (via tau) -> optimal strategy (gamma=0.85):
+ tau   p_dead  P0=gamma_c  u*(0.85)        regime
+   2    0.168       0.832     1.000   SEMELPAROUS
+   3    0.250       0.750     1.000   SEMELPAROUS
+   4    0.325       0.675     1.000   SEMELPAROUS
+   5    0.393       0.607     1.000   SEMELPAROUS
+   6    0.453       0.547     1.000   SEMELPAROUS
+   7    0.508       0.492     1.000   SEMELPAROUS
+  10    0.641       0.359     1.000   SEMELPAROUS
+
+u* vs gamma for three mortality regimes:
+  P0=0.92 (gamma_c=0.92): 0.02 0.06 0.13 0.35 1.00  (gamma=0.2..1.0)
+  P0=0.61 (gamma_c=0.61): 0.16 0.43 0.96 1.00 1.00  (gamma=0.2..1.0)
+  P0=0.36 (gamma_c=0.36): 0.44 1.00 1.00 1.00 1.00  (gamma=0.2..1.0)
