@@ -17,8 +17,7 @@ The punchline, which I did not expect when I started: the optimal agent delibera
 
 Three things, for three kinds of reader:
 
-- **`Paper/`** — the full paper (40 pages, LaTeX + PDF). I'll upload it shortly. I'll also post a link so you can read it on PhilPapers (that way you'll give me a couple of views—I know, I'm a bit of a sellout.)
-- **`Programma/`** — the model itself: a small foraging agent, the exhaustive optimiser, and an interactive dashboard you can open in a browser. Everything is reproducible from the scripts. I like things to be simple and intuitive, so you can launch the entire program simply by opening a .bat file (called “avvia_programma.bat”) - Everything is very neat; I hope you like it. **(Give me a star, give me a star, give me a star)** -
+- **`Program/`** — the model itself: a small foraging agent, the exhaustive optimiser, and an interactive dashboard you can open in a browser. Everything is reproducible from the scripts. I like things to be simple and intuitive, so you can launch the entire program simply by opening a .bat file (called “avvia_programma.bat”) - Everything is very neat; I hope you like it. **(Give me a star, give me a star, give me a star)** -
 
 ---
 
@@ -66,7 +65,7 @@ If those bother you, good, they bother me too, and they are the to-do list....If
 
 You need **Python 3.11+**.
 
-**The easy way (interactive dashboard):** open `Programma/` and double-click `Avvia_programma.bat`. It installs its own dependencies, starts a local server, and opens your browser at `http://localhost:5000`. Drag the sliders (metabolic cost α, horizon τ, reach, …) and watch the optimum move. (I know, some things are still written in Italian. Unfortunately, I still can't think in English. Most of it, though, has been translated, and I solemnly promise that I'll translate everything.)
+**The easy way (interactive dashboard):** open `Program/` and double-click `Run_program.bat`. It installs its own dependencies, starts a local server, and opens your browser at `http://localhost:5000`. Drag the sliders (metabolic cost α, horizon τ, reach, …) and watch the optimum move. (I know, some things are still written in Italian. Unfortunately, I still can't think in English. Most of it, though, has been translated, and I solemnly promise that I'll translate everything.)
 
 **Reproducing the paper's numbers** (from inside `Programma/`):
 
@@ -88,8 +87,8 @@ Pre-generated outputs are in `Programma/risultati/` for reference.
 ```
 .
 ├── README.md                        # this file
-└── Programma/
-    ├── Avvia_programma.bat          # one-click launcher
+└── Program/
+    ├── Run_program.bat              # one-click launcher
     ├── main.py                      # interactive dashboard
     ├── run_experiments.py
     ├── core/                        # the model
@@ -99,7 +98,7 @@ Pre-generated outputs are in `Programma/risultati/` for reference.
     │   ├── age_structured.py        #   age structure & senescence
     │   └── eco_dynamics.py          #   density dependence & bet-hedging
     ├── *.py                         # analysis scripts (reproduce figures/tables)
-    └── risultati/                   # pre-generated outputs
+    └── results/                     # pre-generated outputs
 ```
 
 ---
